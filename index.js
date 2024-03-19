@@ -25,14 +25,19 @@ const client = new Client({
     return GatewayIntentBits[a];
   }),
 });
+// Sunucu oluşturma ve proje aktivitesi sağlama.
+const express = require('express');
 const app = express();
-const port = 3000;
+const port = 8080;
+
+// Web sunucu
 app.get('/', (req, res) => {
-  res.send('YaY Your Bot Status Changed✨');
+  res.sendStatus(200);
 });
+
 app.listen(port, () => {
-  console.log(`🔗 Listening to RTX: http://localhost:${port}`);
-  console.log(`🔗 Powered By RTX`);
+  console.log(`Sunucu ${port} numaralı bağlantı noktasında yürütülüyor.`);
+});
 });
 
 
